@@ -68,7 +68,7 @@
   <div>
     <%= form.label(:password, 'Password:') %>
     <%= form.password_field(:password) %>
-    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -76,7 +76,7 @@
   <div>
     <%= form.label(:user_password_confirmation, 'Confirm password:') %>
     <%= form.password_field(:password_confirmation) %>
-    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
