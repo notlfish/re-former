@@ -1,7 +1,7 @@
 <h1>New User</h1>
 
-<!-- Form with plain HTML
-     <form action="/user" method="post" accept-charset="UTF-8" >
+<!-- Plain HTML form
+     <form action="/users" method="post" accept-charset="UTF-8" >
      <input name="authenticity_token" type="hidden"
      value="<%= form_authenticity_token %>" />
 
@@ -26,8 +26,8 @@
      </form>
 -->
 
-<!-- Form with form_tag:
-     <%= form_tag("/user",  method: "post") do %>
+<!-- *_tag form
+     <%= form_tag("/users",  method: "post") do %>
      <%= label_tag(:user_username, 'User name:') %>
      <%= text_field(:user, :username) %>
      <br>
