@@ -26,7 +26,8 @@ On GitHub bash:
 
 ### Routes
 In this webapp you can access to the following routes:
-- http://localhost:3000/ or http://localhost:3000/user/new to create a new user
+- http://localhost:3000/ to see an index of the current users, with links to edit and new user creation.
+- http://localhost:3000/user/new to create a new user.
 - http://localhost:3000/user/<user_id>/edit to edit the user with id <user_id>
 (replace <user_id> with the correct id in the url). The user must exist for you to be able to access this page.
 
