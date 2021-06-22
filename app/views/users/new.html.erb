@@ -59,7 +59,7 @@
 
   <div>
     <%= form.label(:email, 'email:') %>
-    <%= form.email_field(:email, value: 'example@example.com') %>
+    <%= form.email_field(:email, placeholder: 'example@example.com') %>
     <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -74,7 +74,7 @@
   </div>
 
   <div>
-    <%= form.label(:user_password_confirmation, 'Confirm password:') %>
+    <%= form.label(:password_confirmation, 'Confirm password:') %>
     <%= form.password_field(:password_confirmation) %>
     <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
       <div><%= message %></div>
