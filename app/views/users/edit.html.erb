@@ -11,7 +11,7 @@
 
   <div>
     <%= form.label(:email, 'email:') %>
-    <%= form.email_field(:email, value: @user.email) %>
+    <%= form.email_field(:email, placeholder: @user.email) %>
     <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
     <% end %>
