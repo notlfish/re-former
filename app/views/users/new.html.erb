@@ -1,5 +1,53 @@
 <h1>New User</h1>
 
+<!-- Plain HTML form
+     <form action="/users" method="post" accept-charset="UTF-8" >
+     <input name="authenticity_token" type="hidden"
+     value="<%= form_authenticity_token %>" />
+
+     <label for="user_name">User name:</label>
+     <input type="text" name="user[username]" id="user_name" value="example" />
+     <br>
+
+     <label for="user_email">email:</label>
+     <input type="text" name="user[email]" id="user_email"
+     value="example@examplemail.com" />
+     <br>
+     <label for="user_password">Password:</label>
+     <input type="password" name="user[password]" id="user_password" value="" />
+     <br>
+
+     <label for="user_password_confirmation">Confirm password:</label>
+     <input type="password" name="user[password_confirmation]"
+     id="user_password_confirmation" value="" />
+     <br>
+
+     <input type="submit" name="commit" value="Create User" data-disable-with="Create User">
+     </form>
+-->
+
+<!-- *_tag form
+     <%= form_tag("/users",  method: "post") do %>
+     <%= label_tag(:user_username, 'User name:') %>
+     <%= text_field(:user, :username) %>
+     <br>
+
+     <%= label_tag(:user_email, 'email:') %>
+     <%= text_field(:user, :email) %>
+     <br>
+
+     <%= label_tag(:user_password, 'Password:') %>
+     <%= password_field(:user, :password) %>
+     <br>
+
+     <%= label_tag(:user_password_confirmation, 'Confirm password:') %>
+     <%= password_field(:user, :password_confirmation) %>
+     <br>
+
+     <%= submit_tag('Create user')%>
+     <% end %>
+-->
+
 <%= form_with model: @user do |form| %>
   <div>
     <%= form.label :username, 'User name:' %>
@@ -11,7 +59,7 @@
 
   <div>
     <%= form.label(:email, 'email:') %>
-    <%= form.email_field(:email, value: 'example@example.com') %>
+    <%= form.email_field(:email, placeholder: 'example@example.com') %>
     <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -20,15 +68,15 @@
   <div>
     <%= form.label(:password, 'Password:') %>
     <%= form.password_field(:password) %>
-    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label(:user_password_confirmation, 'Confirm password:') %>
+    <%= form.label(:password_confirmation, 'Confirm password:') %>
     <%= form.password_field(:password_confirmation) %>
-    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
